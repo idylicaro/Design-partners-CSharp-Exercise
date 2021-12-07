@@ -46,6 +46,12 @@ namespace Builder.RealWorld
 
             builder.Vehicle.Show();
 
+            builder = new BusBuilder();
+
+            shop.Construct(builder);
+
+            builder.Vehicle.Show();
+
 
             // Wait for user
 
@@ -209,6 +215,40 @@ namespace Builder.RealWorld
         }
     }
 
+    /// <summary>
+    /// The 'ConcreteBuilder2' class
+    /// </summary>
+    internal class BusBuilder : VehicleBuilder
+    {
+        public BusBuilder()
+        {
+            vehicle = new Vehicle("Bus");
+        }
+
+
+        public override void BuildFrame()
+        {
+            vehicle["frame"] = "Bus Frame";
+        }
+
+
+        public override void BuildEngine()
+        {
+            vehicle["engine"] = "4500 cc";
+        }
+
+
+        public override void BuildWheels()
+        {
+            vehicle["wheels"] = "2";
+        }
+
+
+        public override void BuildDoors()
+        {
+            vehicle["doors"] = "2";
+        }
+    }
 
     /// <summary>
     /// The 'Product' class

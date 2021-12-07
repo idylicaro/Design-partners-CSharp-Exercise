@@ -39,6 +39,16 @@ namespace Composite.RealWorld
 
             root.Add(comp);
 
+            // add new composite
+            var compSquares =
+                new CompositeElement("Two Squares");
+
+            comp.Add(new PrimitiveElement("Black Square"));
+
+            comp.Add(new PrimitiveElement("White Square"));
+
+            root.Add(compSquares);
+
 
             // Add and remove a PrimitiveElement
 

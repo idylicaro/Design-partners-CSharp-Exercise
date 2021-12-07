@@ -24,6 +24,19 @@ namespace Observer.RealWorld
 
             ibm.Attach(new Investor("Dósea"));
 
+            var dosea = new Dosea("Dosea", 200.00);
+
+            dosea.Attach(new Investor("Davi"));
+
+            dosea.Attach(new Investor("Vitor"));
+
+            dosea.Attach(new Investor("Dósea Woman"));
+
+            dosea.Price = 120.10;
+
+            dosea.Price = 121.00;
+
+            dosea.Price = 120.50;
 
             // Fluctuating prices will notify investors
 
@@ -123,6 +136,19 @@ namespace Observer.RealWorld
         // Constructor
 
         public IBM(string symbol, double price)
+            : base(symbol, price)
+        {
+        }
+    }
+
+    /// <summary>
+    /// The 'ConcreteSubject' class
+    /// </summary>
+    internal class Dosea : Stock
+    {
+        // Constructor
+
+        public Dosea(string symbol, double price)
             : base(symbol, price)
         {
         }

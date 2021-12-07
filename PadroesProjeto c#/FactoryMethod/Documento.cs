@@ -25,6 +25,8 @@ namespace Factory.RealWorld
 
             documents[2] = new TCC();
 
+            documents[3] = new Article();
+
             // Display document pages
 
             foreach (Document document in documents)
@@ -189,6 +191,15 @@ namespace Factory.RealWorld
         public override void CreatePages()
         {
             Pages.Add( new SummaryPage() );
+            Pages.Add( new IntroductionPage() );
+            Pages.Add( new ResultsPage()); 
+            Pages.Add( new ConclusionPage()); 
+        }
+    }
+    internal class Article : Document
+    {
+        public override void CreatePages()
+        {
             Pages.Add( new IntroductionPage() );
             Pages.Add( new ResultsPage()); 
             Pages.Add( new ConclusionPage()); 

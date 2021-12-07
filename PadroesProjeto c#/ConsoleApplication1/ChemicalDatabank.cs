@@ -38,6 +38,10 @@ namespace Adapter.RealWorld
 
             ethanol.Display();
 
+            Compound gasolina = new RichCompound("Gasolina");
+
+            gasolina.Display();
+
 
             // Wait for user
 
@@ -144,6 +148,9 @@ namespace Adapter.RealWorld
                     case "ethanol":
                         return -114.1f;
 
+                    case "gasolina":
+                        return -100.1f;
+
                     default:
                         return 0f;
                 }
@@ -163,6 +170,9 @@ namespace Adapter.RealWorld
 
                     case "ethanol":
                         return 78.3f;
+
+                    case "gasolina":
+                        return 85.3f;
 
                     default:
                         return 0f;

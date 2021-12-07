@@ -83,6 +83,10 @@ namespace Flyweight.RealWorld
                     case 'F':
                         character = new CharacterF();
                         break;
+
+                    case 'C':
+                        character = new CharacterC();
+                        break;
                     //...
 
                     case 'Z':
@@ -209,7 +213,37 @@ namespace Flyweight.RealWorld
                               " (pointsize " + this.pointSize + ")");
         }
     }
-    // ... C, D, E, etc.
+
+    /// <summary>
+    /// A 'ConcreteFlyweight' class
+    /// </summary>
+    internal class CharacterC : Character
+    {
+        // Constructor
+        
+        public CharacterC()
+        {
+            symbol = 'C';
+
+            height = 90;
+
+            width = 140;
+
+            ascent = 72;
+
+            descent = 0;
+        }
+
+
+        public override void Display(int pointSize)
+        {
+            this.pointSize = pointSize;
+
+            Console.WriteLine(symbol +
+                              " (pointsize " + this.pointSize + ")");
+        }
+    }
+    // ... D, E, etc.
 
 
     /// <summary>

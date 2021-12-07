@@ -28,6 +28,8 @@ namespace Proxy.RealWorld
 
             Console.WriteLine("4 / 2 = " + proxy.Div(4, 2));
 
+            Console.WriteLine("4^2 = " + proxy.Quad(4));
+
 
             // Wait for user
 
@@ -48,6 +50,8 @@ namespace Proxy.RealWorld
         double Mul(double x, double y);
 
         double Div(double x, double y);
+
+        double Quad(double x);
     }
 
 
@@ -76,6 +80,11 @@ namespace Proxy.RealWorld
         public double Div(double x, double y)
         {
             return x/y;
+        }
+
+        public double Quad(double x)
+        {
+            return x*x;
         }
 
         #endregion
@@ -109,6 +118,11 @@ namespace Proxy.RealWorld
         public double Div(double x, double y)
         {
             return _math.Div(x, y);
+        }
+
+        public double Quad(double x)
+        {
+            return _math.Quad(x);
         }
 
         #endregion

@@ -40,6 +40,8 @@ namespace Bridge.RealWorld
 
             customers.Add("Henry Velasquez");
 
+            customers.Last();
+
 
             customers.ShowAll();
 
@@ -150,6 +152,7 @@ namespace Bridge.RealWorld
     internal abstract class DataObject
     {
         public abstract void NextRecord();
+        public abstract void LastRecord();
 
         public abstract void PriorRecord();
 
@@ -197,7 +200,6 @@ namespace Bridge.RealWorld
             }
         }
 
-
         public override void PriorRecord()
         {
             if (_current > 0)
@@ -206,6 +208,10 @@ namespace Bridge.RealWorld
             }
         }
 
+        public override void LastRecord()
+        {
+            _customers.LastRecord();
+        }
 
         public override void AddRecord(string customer)
         {

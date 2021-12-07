@@ -32,6 +32,13 @@ namespace Abstract.RealWorld
 
             world.RunFoodChain();
 
+            // Create and run the Asia animal world
+
+            ContinentFactory asia = new AsiaFactory();
+
+            world = new AnimalWorld(asia);
+
+            world.RunFoodChain();
 
             // Wait for user input
 
@@ -84,6 +91,21 @@ namespace Abstract.RealWorld
         }
     }
 
+    /// <summary>
+    /// The 'ConcreteFactory3' class
+    /// </summary>
+    internal class AsiaFactory : ContinentFactory
+    {
+        public override Herbivore CreateHerbivore()
+        {
+            return new Bison();
+        }
+
+        public override Carnivore CreateCarnivore()
+        {
+            return new Wolf();
+        }
+    }
 
     /// <summary>
     /// The 'AbstractProductA' abstract class

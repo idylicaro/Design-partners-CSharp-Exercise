@@ -36,7 +36,11 @@ namespace Prototype.RealWorld
 
             colormanager["flame"] = new Color(211, 34, 20);
 
-            colormanager["orange"] = new Color(100, 33, 47); 
+            colormanager["orange"] = new Color(100, 33, 47);
+
+            colormanager["Black"] = new Color(0, 0, 0);
+
+            colormanager["White"] = new Color(255, 255, 255); 
 
 
             // User clones selected colors

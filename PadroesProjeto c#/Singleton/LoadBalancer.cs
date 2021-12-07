@@ -84,6 +84,8 @@ namespace Singleton.RealWorld
             _servers.Add("ServerV");
 
             _servers.Add("ServerVI");
+
+            _servers.Add("ServerVII");
         }
 
 

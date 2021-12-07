@@ -15,6 +15,8 @@ namespace Chain.RealWorld
         {
             // Setup Chain of Responsibility
 
+            Approver Davi = new Chefe();
+
             Approver larry = new Director();
 
             Approver sam = new VicePresident();
@@ -68,6 +70,25 @@ namespace Chain.RealWorld
         public abstract void ProcessRequest(Purchase purchase);
     }
 
+    /// <summary>
+    /// The 'ConcreteHandler' class
+    /// </summary>
+    internal class Chefe : Approver
+    {
+        public override void ProcessRequest(Purchase purchase)
+        {
+            if (purchase.Amount < 1000000.0)
+            {
+                Console.WriteLine("{0} approved request# {1}",
+                                  GetType().Name, purchase.Number);
+            }
+
+            else if (successor != null)
+            {
+                successor.ProcessRequest(purchase);
+            }
+        }
+    }
 
     /// <summary>
     /// The 'ConcreteHandler' class

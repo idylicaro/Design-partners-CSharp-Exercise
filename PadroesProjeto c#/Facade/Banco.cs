@@ -65,6 +65,19 @@ namespace Facade.RealWorld
         }
     }
 
+    /// <summary>
+    /// The 'Subsystem ClassD' class
+    /// </summary>
+    internal class Serasa
+    {
+        public bool VerificaPendencias(Customer c)
+        {
+            Console.WriteLine("Check credit for " + c.Name);
+
+            return true;
+        }
+    }
+
 
     /// <summary>
     /// The 'Subsystem ClassC' class
@@ -114,6 +127,7 @@ namespace Facade.RealWorld
 
         private readonly Credit _credit = new Credit();
         private readonly Loan _loan = new Loan();
+        private readonly Serasa _serasa = new Serasa();
 
 
         public bool IsEligible(Customer cust, int amount)
@@ -138,6 +152,11 @@ namespace Facade.RealWorld
             }
 
             else if (!_credit.HasGoodCredit(cust))
+            {
+                eligible = false;
+            }
+
+            else if (!_serasa.VerificaPendencias(cust))
             {
                 eligible = false;
             }
