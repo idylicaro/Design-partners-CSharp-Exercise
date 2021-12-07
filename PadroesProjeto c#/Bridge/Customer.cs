@@ -84,6 +84,11 @@ namespace Bridge.RealWorld
             _dataObject.NextRecord();
         }
 
+        public virtual void Last()
+        {
+            _dataObject.LastRecord();
+        }
+
 
         public virtual void Prior()
         {
@@ -143,6 +148,8 @@ namespace Bridge.RealWorld
 
             Console.WriteLine("------------------------");
         }
+
+        
     }
 
 
@@ -189,6 +196,7 @@ namespace Bridge.RealWorld
             _customers.Add("Ann Stills");
 
             _customers.Add("Lisa Giolani");
+
         }
 
 
@@ -206,11 +214,6 @@ namespace Bridge.RealWorld
             {
                 _current--;
             }
-        }
-
-        public override void LastRecord()
-        {
-            _customers.LastRecord();
         }
 
         public override void AddRecord(string customer)
@@ -237,6 +240,11 @@ namespace Bridge.RealWorld
             {
                 Console.WriteLine(" " + customer);
             }
+        }
+
+        public override void LastRecord()
+        {
+            throw new NotImplementedException();
         }
     }
 }

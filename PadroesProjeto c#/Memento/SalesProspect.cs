@@ -195,6 +195,8 @@ namespace Memento.RealWorld
 
         public string Phone { get; set; }
 
+        public string Phone2 { get; set; }
+
 
         // Gets or sets budget
 
